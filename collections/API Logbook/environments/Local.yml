@@ -8,3 +8,5 @@ variables:
     name: password
   - secret: true
     name: token
+  - name: id
+    value: "6"

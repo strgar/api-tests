@@ -1,0 +1,33 @@
+info:
+  name: Update user
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/users/:id"
+  params:
+    - name: id
+      value: "6"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "nama": "Budi Santoso",
+        "username": "budi",
+        "password": "password123",
+        "phone": "081234567890",
+        "alamat": "Bandung",
+        "role_id": 7,
+        "status": 0
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
