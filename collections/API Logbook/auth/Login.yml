@@ -5,13 +5,28 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/auth"
+  url: "{{baseUrl}}/auth"
+  body:
+    type: json
+    data: |-
+      {
+        "username": "{{username}}",
+        "password": "{{password}}"
+      }
   auth: inherit
 
 runtime:
   variables:
     - name: baseUrl
-      value: http://localhost:3000/
+      value: http://localhost:3000/api
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        if (res.getStatus() === 200 && body.token) {
+          bru.setEnvVar("token", body.token, { persist: true });
+        }
 
 settings:
   encodeUrl: true
