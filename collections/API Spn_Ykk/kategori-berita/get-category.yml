@@ -1,15 +1,11 @@
 info:
-  name: Hapus user
+  name: get-category
   type: http
-  seq: 5
+  seq: 1
 
 http:
-  method: DELETE
-  url: "{{baseUrl}}/users/:id"
-  params:
-    - name: id
-      value: "6"
-      type: path
+  method: GET
+  url: "{{baseUrl}}/kategori_berita"
   auth:
     type: bearer
     token: "{{token}}"

@@ -1,0 +1,23 @@
+info:
+  name: update-category
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/kategori_berita/3"
+  body:
+    type: json
+    data: |-
+      {
+        "nama": "Keuangan"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

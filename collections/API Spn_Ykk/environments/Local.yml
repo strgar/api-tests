@@ -1,0 +1,14 @@
+name: Local
+variables:
+  - name: baseUrl
+    value: http://localhost:8000/api
+  - name: username
+    value: admin
+  - name: id
+    value: "6"
+  - secret: true
+    name: password
+    description: ""
+  - secret: true
+    name: token
+    description: ""

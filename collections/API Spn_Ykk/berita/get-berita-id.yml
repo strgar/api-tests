@@ -1,14 +1,14 @@
 info:
-  name: Hapus user
+  name: get-berita-id
   type: http
-  seq: 5
+  seq: 2
 
 http:
-  method: DELETE
-  url: "{{baseUrl}}/users/:id"
+  method: GET
+  url: "{{baseUrl}}/berita/:id"
   params:
     - name: id
-      value: "6"
+      value: ""
       type: path
   auth:
     type: bearer
